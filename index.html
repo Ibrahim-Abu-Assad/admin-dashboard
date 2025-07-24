@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <h3>Dashboard Menu</h3>
+                <ul>
+                    <li><a href="#" class="active">Overview</a></li>
+                    <li><a href="#">Users</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Reports</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Customers</a></li>
+                    <li><a href="#">Suppliers</a></li>
+                    <li><a href="#">Inventory</a></li>
+                    <li><a href="#">Promotions</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Integrations</a></li>
+                    <li><a href="#">Backup</a></li>
+                    <li><a href="#">Logs</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="main-content">
+            <header class="top-navbar">
+                <div class="navbar-left">
+                    <button class="sidebar-toggle-btn" aria-label="Toggle Sidebar">☰</button>
+                    <h1>Dashboard Overview</h1>
+                </div>
+                <div class="navbar-right">
+                    <div class="theme-switch-wrapper">
+                        <label class="theme-switch" for="checkbox">
+                            <input type="checkbox" id="checkbox" />
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="user-dropdown">
+                        <button class="user-avatar" aria-label="User Menu">
+                            <img src="assets/user-avatar.JPG" alt="User Avatar">
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="#">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="dashboard-sections">
+                <section class="summary-cards">
+                    <div class="card">
+                        <h3>Total Users</h3>
+                        <p>1,234</p>
+                    </div>
+                    <div class="card">
+                        <h3>Revenue</h3>
+                        <p>$56,789</p>
+                    </div>
+                    <div class="card">
+                        <h3>Orders</h3>
+                        <p>456</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending</h3>
+                        <p>78</p>
+                    </div>
+                </section>
+
+                <section class="data-table-section">
+                    <h2>Recent Transactions</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Item</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#001</td>
+                                <td>Product A</td>
+                                <td>$150</td>
+                                <td>Completed</td>
+                            </tr>
+                            <tr>
+                                <td>#002</td>
+                                <td>Service B</td>
+                                <td>$300</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>#003</td>
+                                <td>Product C</td>
+                                <td>$50</td>
+                                <td>Completed</td>
+                            </tr>
+                            <tr>
+                                <td>#004</td>
+                                <td>Software License</td>
+                                <td>$99</td>
+                                <td>Completed</td>
+                            </tr>
+                            <tr>
+                                <td>#005</td>
+                                <td>Consultation</td>
+                                <td>$500</td>
+                                <td>Pending</td>
+                            </tr>
+                            <tr>
+                                <td>#006</td>
+                                <td>Hardware Upgrade</td>
+                                <td>$1200</td>
+                                <td>Shipped</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="chart-section">
+                    <h2>Sales Overview</h2>
+                    <div class="chart-placeholder">
+                        <p>Chart will go here</p>
+                    </div>
+                </section>
+
+                <section class="recent-activity-section">
+                    <h2>Recent Activity</h2>
+                    <ul>
+                        <li>User John Doe logged in.</li>
+                        <li>New order #004 placed.</li>
+                        <li>Product inventory updated.</li>
+                        <li>Admin changed user permissions.</li>
+                        <li>System backup completed.</li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Edit User</h2>
+            <p>This is placeholder content for editing user data.</p>
+            <button id="modalActionButton">Save Changes</button>
+        </div>
+    </div>
+
+    <div id="toastContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
