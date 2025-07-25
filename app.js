@@ -9,9 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const userDropdownMenu = document.querySelector('.user-dropdown .dropdown-menu');
 
     // Modal elements
-    const modal = document.getElementById('myModal');
-    const closeButton = document.querySelector('#myModal .close-button'); 
-    const modalActionButton = document.getElementById('modalActionButton');
+    const modal = document.getElementById('dataModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalForm = document.getElementById('modalForm');
+    const modalItemInput = document.getElementById('modalItem');
+    const modalPriceInput = document.getElementById('modalPrice');
+    const modalStatusSelect = document.getElementById('modalStatus');
 
     // Toast container
     const toastContainer = document.getElementById('toastContainer');
@@ -30,13 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Close sidebar when clicking outside (for mobile overlay)
         document.body.addEventListener('click', (event) => {
-            
             if (sidebar.classList.contains('active') &&
                 !sidebar.contains(event.target) &&
                 !sidebarToggleBtn.contains(event.target)) {
                 sidebar.classList.remove('active');
                 document.body.classList.remove('sidebar-open');
-
             }
         });
 
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         themeSwitch.checked = (savedTheme === 'dark');
         applyTheme(savedTheme);
     } else {
+        // Check system preference if no theme saved
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         if (prefersDark) {
             themeSwitch.checked = true;
@@ -99,43 +101,59 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Modal Open/Close
+    // 5. Modal Open/Close and Data Population
     // =====================================
-    window.openModal = () => {
-        if (modal) {
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-    };
+    document.querySelectorAll('.open-modal').forEach(btn => {
+        btn.addEventListener('click', (event) => {
+            const row = event.target.closest('tr');
+            if (row) {
+                const itemId = row.dataset.id;
+                const item = row.dataset.item;
+                const price = row.dataset.price;
+                const status = row.dataset.status;
 
-    // Function to close modal
-    const closeModal = () => {
-        if (modal) {
-            modal.classList.remove('show');
-            document.body.style.overflow = '';
-        }
-    };
+                // Populate modal fields
+                modalItemInput.value = item;
+                modalPriceInput.value = price;
+                modalStatusSelect.value = status;
 
-    // Event listeners for modal
-    if (modal) {
-        if (closeButton) {
-            closeButton.addEventListener('click', closeModal);
-        }
-
-        // Close when clicking outside content
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
             }
         });
+    });
 
-        // Example: Action inside modal
-        if (modalActionButton) {
-            modalActionButton.addEventListener('click', () => {
-                showToast('Changes saved successfully!');
-                closeModal();
-            });
-        }
+    // Close modal
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close when clicking outside modal content
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Handle modal form submission
+    if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const updatedItem = modalItemInput.value;
+            const updatedPrice = modalPriceInput.value;
+            const updatedStatus = modalStatusSelect.value;
+
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+            showToast(`Item "${updatedItem}" updated successfully!`, 3000);
+        });
     }
 
     // 6. Simple Toast Alert
@@ -152,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         toastContainer.appendChild(toast);
 
+        // Animate in
         setTimeout(() => {
             toast.classList.add('show');
         }, 10);
@@ -165,6 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, duration);
     };
 
-    // Example of calling toast on page load:
+    // Initial toast on page load
     showToast('Welcome to the Dashboard!', 4000);
 });

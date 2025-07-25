@@ -88,44 +88,52 @@
                                 <th>Item</th>
                                 <th>Price</th>
                                 <th>Status</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <!-- Data attributes added for dynamic modal population -->
+                            <tr data-id="#001" data-item="Product A" data-price="150" data-status="Completed">
                                 <td>#001</td>
                                 <td>Product A</td>
                                 <td>$150</td>
                                 <td>Completed</td>
+                                <td><button class="open-modal btn-small">Edit</button></td>
                             </tr>
-                            <tr>
+                            <tr data-id="#002" data-item="Service B" data-price="300" data-status="Pending">
                                 <td>#002</td>
                                 <td>Service B</td>
                                 <td>$300</td>
                                 <td>Pending</td>
+                                <td><button class="open-modal btn-small">Edit</button></td>
                             </tr>
-                            <tr>
+                            <tr data-id="#003" data-item="Product C" data-price="50" data-status="Completed">
                                 <td>#003</td>
                                 <td>Product C</td>
                                 <td>$50</td>
                                 <td>Completed</td>
+                                <td><button class="open-modal btn-small">Edit</button></td>
                             </tr>
-                            <tr>
+                            <tr data-id="#004" data-item="Software License" data-price="99" data-status="Completed">
                                 <td>#004</td>
                                 <td>Software License</td>
                                 <td>$99</td>
                                 <td>Completed</td>
+                                <td><button class="open-modal btn-small">Edit</button></td>
                             </tr>
-                            <tr>
+                            <tr data-id="#005" data-item="Consultation" data-price="500" data-status="Pending">
                                 <td>#005</td>
                                 <td>Consultation</td>
                                 <td>$500</td>
                                 <td>Pending</td>
+                                <td><button class="open-modal btn-small">Edit</button></td>
                             </tr>
-                            <tr>
+                            <tr data-id="#006" data-item="Hardware Upgrade" data-price="1200" data-status="Shipped">
                                 <td>#006</td>
                                 <td>Hardware Upgrade</td>
                                 <td>$1200</td>
                                 <td>Shipped</td>
+                                <td><button class="open-modal btn-small">Edit</button></td>
                             </tr>
                         </tbody>
                     </table>
@@ -152,17 +160,35 @@
         </div>
     </div>
 
-    <div id="myModal" class="modal">
+    <!-- Modal for editing data -->
+    <div class="modal" id="dataModal">
         <div class="modal-content">
-            <span class="close-button">&times;</span>
-            <h2>Edit User</h2>
-            <p>This is placeholder content for editing user data.</p>
-            <button id="modalActionButton">Save Changes</button>
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Edit Transaction</h2>
+            <form id="modalForm">
+                <label for="modalItem">Item</label>
+                <input type="text" id="modalItem" placeholder="Enter item name" required>
+
+                <label for="modalPrice">Price</label>
+                <input type="number" id="modalPrice" placeholder="Enter price" step="0.01" required>
+
+                <label for="modalStatus">Status</label>
+                <select id="modalStatus" required>
+                    <option value="Completed">Completed</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+
+                <button type="submit" class="btn">Save Changes</button>
+            </form>
         </div>
     </div>
 
+    <!-- Toast Notification Container -->
     <div id="toastContainer"></div>
 
     <script src="app.js"></script>
+
 </body>
 </html>
