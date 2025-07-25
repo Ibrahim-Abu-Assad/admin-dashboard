@@ -1,56 +1,72 @@
-# Admin Dashboard
+# Responsive Admin Dashboard
 
-A fully responsive, interactive Admin Dashboard built using **HTML**, **Advanced CSS**, and **Vanilla JavaScript**.
-No frameworks used — just pure front-end development.
+A fully responsive and interactive Admin Dashboard built with **HTML**, **advanced CSS**, and **Vanilla JavaScript** — no frameworks used.
 
----
-
-## 🚀 Live Preview
-[View Project](https://ibrahim-abu-assad.github.io/admin-dashboard/)
+This project demonstrates modern front-end techniques including CSS Grid/Flexbox layouts, Dark/Light theme switching, dynamic modals, and interactive UI components — all from scratch.
 
 ---
 
-## 📂 Features
-- **Responsive Design**: Works perfectly on desktop, tablet, and mobile.
-- **Collapsible Sidebar**: Fully interactive with smooth animations.
-- **Dark/Light Mode**: Toggle theme with persistence using `localStorage`.
-- **User Dropdown Menu**: Click-to-open/close with outside click detection.
-- **Dashboard Cards**: Key metrics displayed in modern, styled cards.
-- **Data Table**: Responsive user/transaction table.
-- **Chart Placeholder**: Ready-to-integrate area for analytics/graphs.
-- **Custom Scrollbar**: Styled for better user experience.
-- **Animated Interactions**: Smooth transitions for sidebar, dropdown, and cards.
-- **Modal Component**: Reusable popup for editing/viewing data.
-- **Toast Notifications**: Quick feedback messages for user actions.
+## ✨ Features
+
+### Layout & Styling (CSS)
+
+* **Responsive Grid Layout** using CSS Grid for overall structure.
+* **Flexbox-based Sidebar & Navbar** for adaptive alignment.
+* **Mobile-first Design** with smooth sidebar toggle for smaller screens.
+* **CSS Variables** for consistent theming and easy customization.
+* **Dark & Light Theme** (auto-detected + toggleable with smooth transitions).
+* **Custom Scrollbars**, Hover Effects, and Interactive Cards.
+* **Animations**: Subtle hover lift for cards, dropdown transitions, and modal animations.
+
+### Interactivity (JavaScript)
+
+* **Sidebar Toggle**: Open/close sidebar with click & auto-close on outside click or window resize.
+* **Dark/Light Mode**:
+    * Saves user preference in `localStorage`.
+    * Detects system color scheme by default.
+* **User Dropdown Menu**: Open/close with click, closes when clicking outside.
+* **Dynamic Modal Windows**:
+    * Opens with pre-filled data from selected table rows.
+    * Smooth transitions & body scroll lock while open.
+* **Form Handling**: Simulates item updates and gives real-time feedback.
+* **Toast Notifications**:
+    * Reusable and animated.
+    * Auto-dismiss after a given duration.
+* **Event Delegation** for performance (e.g., `.open-modal` buttons).
 
 ---
 
-## 🎨 Advanced CSS Techniques Used
-- **CSS Grid** for the main layout structure.
-- **Flexbox** for alignment and component layout.
-- **CSS Variables** (`--var`) for theme colors, spacing, and font sizes.
-- **Dark/Light Mode** using variables + `data-theme` attribute.
-- **Custom Scrollbar** for sidebar and content areas.
-- **Transitions & Animations** for hover effects and UI elements.
-- **Media Queries** for mobile-first responsive design.
-- **Pseudo-elements** (`::before`, `::after`) for design details.
-- **Reusable Utility Classes** for padding, margins, and buttons.
-- **Sticky Positioning** for sidebar and top navigation bar.
+## 🛠️ Technologies Used
+
+* **HTML5** – Semantic, accessible markup.
+* **CSS3** – Grid, Flexbox, Variables, Media Queries, Animations.
+* **Vanilla JavaScript (ES6)** – Modular, event-driven DOM manipulation.
 
 ---
 
+## 🚀 How to Run the Project
 
-## 🛠️ How to Run
-Clone the repository:
+1.  **Clone the repository**:
 
-```bash
-git clone [https://github.com/Ibrahim-Abu-Assad/admin-dashboard.git](https://github.com/Ibrahim-Abu-Assad/admin-dashboard.git)
-```
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/admin-dashboard.git](https://github.com/YOUR_USERNAME/admin-dashboard.git)
+    ```
 
-Open index.html in your browser.
+2.  **Navigate to the project folder**:
 
-## 👨‍💻 Author  
-**Ibrahim Abu-Assad**  
-[LinkedIn](https://www.linkedin.com/in/ibrahim-abu-assad-4b636b32b/) | [GitHub](https://github.com/Ibrahim-Abu-Assad)
+    ```bash
+    cd admin-dashboard
+    ```
 
+3.  **Open `index.html` in your browser.**
 
+    *No build steps required — it’s pure HTML/CSS/JS.*
+
+---
+
+## 👨‍💻 Author
+
+Ibrahim Abu-Assad
+
+* [LinkedIn](https://www.linkedin.com/in/ibrahim-abu-assad-4b636b32b/)
+* [GitHub](https://github.com/Ibrahim-Abu-Assad)
