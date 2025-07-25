@@ -49,7 +49,8 @@ git clone [https://github.com/Ibrahim-Abu-Assad/admin-dashboard.git](https://git
 
 Open index.html in your browser.
 
-👨‍💻 Author
-Ibrahim Abu-Assad
-LinkedIn[https://www.linkedin.com/in/ibrahim-abu-assad-4b636b32b/] | GitHub[https://github.com/Ibrahim-Abu-Assad]
+## 👨‍💻 Author  
+**Ibrahim Abu-Assad**  
+[LinkedIn](https://www.linkedin.com/in/ibrahim-abu-assad-4b636b32b/) | [GitHub](https://github.com/Ibrahim-Abu-Assad)
+
 
